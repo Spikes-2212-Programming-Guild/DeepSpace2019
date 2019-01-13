@@ -8,19 +8,19 @@
 package frc.robot;
 
 public class RobotMap {
-	public static interface CAN{
-		
+  public static interface CAN{
+    // TODO: put CAN ports here
 	}
 	
 	public static interface DIO{
-		
+    // TODO: put DIO ports here
 	}
 	
 	public static interface PWM{
-		
+		// TODO: put PWM ports here
 	}
 	
 	public static interface ANALOG{
-		
+		// TODO: put analog ports here
 	}
 }

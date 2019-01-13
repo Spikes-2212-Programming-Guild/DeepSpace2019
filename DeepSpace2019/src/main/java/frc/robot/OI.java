@@ -11,12 +11,14 @@ import com.spikes2212.utils.XboXUID;
 
 import edu.wpi.first.wpilibj.Joystick;
 
-public class OI /* GEVALD */ {
+public class OI /* GEVALD */ {  
 
 	private Joystick driverRight = new Joystick(0);
 	private Joystick driverLeft = new Joystick(1);
 
 	private XboXUID navigator = new XboXUID(2);
+
+  // TODO: add buttons for subsystems
 
 	public OI() {
 

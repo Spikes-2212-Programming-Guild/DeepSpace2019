@@ -19,6 +19,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class Robot extends TimedRobot {
 	
 	public static OI oi;
+  // TODO: create subsystems here
 
 	private CamerasHandler camerasHandler;
 	private DashBoardController dbc;
@@ -29,7 +30,8 @@ public class Robot extends TimedRobot {
 	public void robotInit() {
 		oi = new OI();
 		SmartDashboard.putData("Auto mode", autoChooser);
-		dbc = new DashBoardController();
+    dbc = new DashBoardController();
+    // TODO: initialize subsystems here
 	}
 
 	/**
