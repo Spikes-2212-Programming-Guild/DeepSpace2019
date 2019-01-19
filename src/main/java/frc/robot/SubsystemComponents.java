@@ -8,9 +8,9 @@ import edu.wpi.first.wpilibj.SpeedControllerGroup;
 public class SubsystemComponents {
 	public static class Drivetrain {
 		public static final SpeedControllerGroup DRIVETRAIN_LEFT = new SpeedControllerGroup(
-				new WPI_TalonSRX(RobotMap.CAN.MOTOR_LEFT_UP), new WPI_TalonSRX(RobotMap.CAN.MOTOR_LEFT_DOWN));
+				new WPI_TalonSRX(RobotMap.CAN.MOTOR_LEFT_1), new WPI_TalonSRX(RobotMap.CAN.MOTOR_LEFT_2));
 
 		public static final SpeedControllerGroup DRIVETRAIN_RIGHT = new SpeedControllerGroup(
-				new WPI_TalonSRX(RobotMap.CAN.MOTOR_RIGHT_UP), new WPI_TalonSRX(RobotMap.CAN.MOTOR_RIGHT_DOWN));
+				new WPI_TalonSRX(RobotMap.CAN.MOTOR_RIGHT_1), new WPI_TalonSRX(RobotMap.CAN.MOTOR_RIGHT_2));
 	}
 }
