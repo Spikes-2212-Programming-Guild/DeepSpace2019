@@ -13,14 +13,18 @@ public class OI /*GEVALD*/ {
     public OI() {
     }
 
-    private Joystick leftJoystick = new Joystick(0);
-    private Joystick rightJoystick = new Joystick(1);
+    private Joystick leftJoystick = new Joystick(1);
+    private Joystick rightJoystick = new Joystick(0);
 
-    public double getLeftY() {
-        return -leftJoystick.getY();
+    public double adjustInput(double value) {
+        return Math.abs(value) * value;
     }
-    public double getRightX() {
-        return -rightJoystick.getX();
+        public double getLeftY(){
+            return adjustInput(-leftJoystick.getY());
+        }
 
+        public double getRightX(){
+            return adjustInput(-rightJoystick.getX());
+
+        }
     }
-}
