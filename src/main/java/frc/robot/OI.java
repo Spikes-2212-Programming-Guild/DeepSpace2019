@@ -7,6 +7,20 @@
 
 package frc.robot;
 
-public class OI /*GEVALD*/ {
+import edu.wpi.first.wpilibj.Joystick;
 
+public class OI /*GEVALD*/ {
+    public OI() {
+    }
+
+    private Joystick leftJoystick = new Joystick(0);
+    private Joystick rightJoystick = new Joystick(1);
+
+    public double getLeftY() {
+        return -leftJoystick.getY();
+    }
+    public double getRightX() {
+        return -rightJoystick.getX();
+
+    }
 }

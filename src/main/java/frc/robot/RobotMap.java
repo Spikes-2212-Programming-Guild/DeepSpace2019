@@ -9,4 +9,10 @@ package frc.robot;
 
 
 public class RobotMap {
+    public interface CAN {
+        public static final int LEFT_UP = 0;
+        public static final int LEFT_DOWN = 1;
+        public static final int RIGHT_UP = 2;
+        public static final int RIGHT_DOWN = 3;
+    }
 }
