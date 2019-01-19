@@ -9,10 +9,10 @@ package frc.robot;
 
 public class RobotMap {
 	public interface CAN {
-		public static final int MOTOR_LEFT_1 = 0;
-		public static final int MOTOR_LEFT_2 = 1;
-		public static final int MOTOR_RIGHT_1 = 2;
-		public static final int MOTOR_RIGHT_2 = 3;
+		public static final int MOTOR_LEFT1 = 0;
+		public static final int MOTOR_LEFT2 = 1;
+		public static final int MOTOR_RIGHT1 = 2;
+		public static final int MOTOR_RIGHT2 = 3;
 	}
 
 	public interface DIO {
