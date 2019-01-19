@@ -7,6 +7,7 @@
 
 package frc.robot;
 
+import com.spikes2212.genericsubsystems.basicSubsystem.BasicSubsystem;
 import com.spikes2212.genericsubsystems.drivetrains.TankDrivetrain;
 import com.spikes2212.genericsubsystems.drivetrains.commands.DriveArcade;
 import com.spikes2212.utils.InvertedConsumer;
@@ -17,14 +18,13 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 public class Robot extends TimedRobot {
     public static OI oi;
     public static TankDrivetrain drivetrain;
-
+    public static BasicSubsystem lift;
 
     @Override
     public void robotInit() {
         oi = new OI();
         drivetrain = new TankDrivetrain(new InvertedConsumer(SubsystemComponents.Drivetrain.DRIVETRAIN_LEFT::set), SubsystemComponents.Drivetrain.DRIVETRAIN_RIGHT::set);
-        drivetrain.setDefaultCommand(new DriveArcade(drivetrain,()->oi.getLeftJoystickY(),()->oi.getRightJoystickX()));
-
+        drivetrain.setDefaultCommand(new DriveArcade(drivetrain, () -> oi.getLeftJoystickY(), () -> oi.getRightJoystickX()));
     }
 
 
