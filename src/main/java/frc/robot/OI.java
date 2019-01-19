@@ -16,15 +16,23 @@ public class OI /*GEVALD*/ {
     private Joystick leftJoystick = new Joystick(1);
     private Joystick rightJoystick = new Joystick(0);
 
-    public double adjustInput(double value) {
-        return Math.abs(value) * value;
-    }
-        public double getLeftY(){
-            return adjustInput(-leftJoystick.getY());
-        }
-
-        public double getRightX(){
-            return adjustInput(-rightJoystick.getX());
-
-        }
+	public static double adjustInput(double speed) {
+		return speed * Math.abs(speed);
+	}
+	
+	public double getLeftJoystickX(){
+		return -adjustInput(this.driverLeft.getX());
+	}
+	
+	public double getLeftJoystickY(){
+		return -adjustInput(this.driverLeft.getY());
+	}
+	
+	public double getRightJoystickX(){
+		return -adjustInput(this.driverRight.getX());
+	}
+	
+	public double getRightJoystickY(){
+		return -adjustInput(this.driverRight.getY());
+	}
     }
