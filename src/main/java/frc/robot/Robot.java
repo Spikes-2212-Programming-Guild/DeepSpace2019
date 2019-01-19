@@ -23,7 +23,7 @@ public class Robot extends TimedRobot {
     public void robotInit() {
         oi = new OI();
         drivetrain = new TankDrivetrain(new InvertedConsumer(SubsystemComponents.Drivetrain.DT_LEFT::set), SubsystemComponents.Drivetrain.DT_RIGHT::set);
-        drivetrain.setDefaultCommand(new DriveArcade(drivetrain,()->oi.getLeftY(),()->oi.getRightX()));
+        drivetrain.setDefaultCommand(new DriveArcade(drivetrain,()->oi.getLeftJoystickY(),()->oi.getRightJoystickX()));
 
     }
 
