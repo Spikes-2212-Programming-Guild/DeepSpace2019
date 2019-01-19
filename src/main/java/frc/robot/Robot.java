@@ -7,54 +7,60 @@
 
 package frc.robot;
 
+import com.spikes2212.genericsubsystems.drivetrains.TankDrivetrain;
+import com.spikes2212.genericsubsystems.drivetrains.commands.DriveArcade;
+import com.spikes2212.utils.InvertedConsumer;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 
 
 public class Robot extends TimedRobot {
-  public static OI oi;
+    public static OI oi;
+    public static TankDrivetrain drivetrain;
 
 
+    @Override
+    public void robotInit() {
+        oi = new OI();
+        drivetrain = new TankDrivetrain(new InvertedConsumer(SubsystemComponents.Drivetrain.DT_LEFT::set), SubsystemComponents.Drivetrain.DT_RIGHT::set);
+        drivetrain.setDefaultCommand(new DriveArcade(drivetrain,()->oi.getLeftY(),()->oi.getRightX()));
 
-  @Override
-  public void robotInit() {
-    oi = new OI();
-  }
-
-
-  @Override
-  public void robotPeriodic() {
-  }
-
-  @Override
-  public void disabledInit() {
-  }
-
-  @Override
-  public void disabledPeriodic() {
-    Scheduler.getInstance().run();
-  }
-
-  @Override
-  public void autonomousInit() {
-  }
+    }
 
 
-  @Override
-  public void autonomousPeriodic() {
-    Scheduler.getInstance().run();
-  }
+    @Override
+    public void robotPeriodic() {
+    }
 
-  @Override
-  public void teleopInit() {
-  }
+    @Override
+    public void disabledInit() {
+    }
 
-  @Override
-  public void teleopPeriodic() {
-    Scheduler.getInstance().run();
-  }
+    @Override
+    public void disabledPeriodic() {
+        Scheduler.getInstance().run();
+    }
 
-  @Override
-  public void testPeriodic() {
-  }
+    @Override
+    public void autonomousInit() {
+    }
+
+
+    @Override
+    public void autonomousPeriodic() {
+        Scheduler.getInstance().run();
+    }
+
+    @Override
+    public void teleopInit() {
+    }
+
+    @Override
+    public void teleopPeriodic() {
+        Scheduler.getInstance().run();
+    }
+
+    @Override
+    public void testPeriodic() {
+    }
 }

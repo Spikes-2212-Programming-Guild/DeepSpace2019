@@ -43,6 +43,10 @@ repositories {
     maven {
         url = "https://mymavenrepo.com/repo/fDwN5Fqu32WHQ4GM9lTY/"
     }
+
+    maven {
+        url = "http://devsite.ctr-electronics.com/maven/release/"
+    }
 }
 
 // Defining my dependencies. In this case, WPILib (+ friends), and vendor libraries.
@@ -54,6 +58,8 @@ dependencies {
     nativeDesktopZip wpi.deps.vendor.jni(wpi.platforms.desktop)
     testCompile 'junit:junit:4.12'
     compile "com.spikes2212:sl:3.0.0"
+    compile "com.ctre.phoenix:api-java:5.12.1"
+    compile "com.ctre.phoenix:wpiapi-java:5.12.1"
 }
 
 // Setting up my Jar File. In this case, adding all libraries into the main jar ('fat jar')
