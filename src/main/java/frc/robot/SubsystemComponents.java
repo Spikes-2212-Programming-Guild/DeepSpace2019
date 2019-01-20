@@ -12,6 +12,8 @@ public class SubsystemComponents {
 
 		public static final SpeedControllerGroup DRIVETRAIN_RIGHT = new SpeedControllerGroup(
 				new WPI_TalonSRX(RobotMap.CAN.MOTOR_RIGHT1), new WPI_TalonSRX(RobotMap.CAN.MOTOR_RIGHT2));
+
+
 	}
 
 	public static class Lift {
