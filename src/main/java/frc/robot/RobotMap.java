@@ -25,7 +25,7 @@ public class RobotMap {
 	}
 
 	public static interface ANALOG {
-		public static final int LIGHT = 0;
+		public static final int LIGHT_SENSOR = 0;
 
 	}
 }
