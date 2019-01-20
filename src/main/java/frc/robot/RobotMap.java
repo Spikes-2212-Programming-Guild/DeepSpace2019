@@ -16,7 +16,8 @@ public class RobotMap {
 	}
 
 	public interface DIO {
-
+	public static final int DRIVETRAIN_ENCODER = 0;
+	public static final int DRIVETRAIN_ENCODER1 = 1;
 	}
 
 	public static interface PWM {
