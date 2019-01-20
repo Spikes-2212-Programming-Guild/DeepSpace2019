@@ -1,4 +1,8 @@
-package frc.robot;
+package src.main.java.frc.robot;
+
+import java.util.function.Supplier;
+
+import com.spikes2212.dashboard.ConstantHandler;
 
 public class SubsystemConstants {
 
@@ -22,7 +26,8 @@ public class SubsystemConstants {
 
 	}
 
-	public static class Roller {
-
+	public static class Gripper {
+		public static final Supplier<Double> OUT_SPEED = ConstantHandler.addConstantDouble("Throw", 0.3);
+		public static final Supplier<Double> GRIP_SPEED = ConstantHandler.addConstantDouble("Gripp", 0.3);
 	}
 }
