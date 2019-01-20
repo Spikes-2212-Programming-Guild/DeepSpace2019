@@ -33,5 +33,6 @@ public class SubsystemConstants {
 		public static final Supplier<Double> GRIP_SPEED = ConstantHandler.addConstantDouble("Gripp", 0.3);
 		public static final Supplier<Double> VOLTAGE = ConstantHandler.addConstantDouble("light sensor",
 				SubsystemComponents.Gripper.LIGHT_SENSOR.getVoltage());
+		public static final Supplier<Double> LIMIT_VOLTAGE= ConstantHandler.addConstantDouble("limit for entering ball", 5)
 	}
 }
