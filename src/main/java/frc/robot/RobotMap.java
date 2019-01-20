@@ -23,7 +23,7 @@ public class RobotMap {
 
 	}
 
-	public static interface ANALOG {
+	public static interface ANALOG_IN {
 
 	}
 }
