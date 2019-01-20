@@ -28,7 +28,8 @@ public class RobotMap {
         public static final int LIFT_MOTOR2 = 1;
     }
 
-    public interface ANALOG {
+	public static interface ANALOG_IN {
 
-    }
+	}
+
 }
