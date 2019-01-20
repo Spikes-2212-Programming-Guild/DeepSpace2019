@@ -15,8 +15,7 @@ public class OI /*GEVALD*/ {
 
     private Joystick leftJoystick = new Joystick(1);
     private Joystick rightJoystick = new Joystick(0);
-    private JoystickButton push =new JoystickButton(leftJoystick, 0);
-    private JoystickButton take =new JoystickButton(leftJoystick, 1);
+ 
 
 	public static double adjustInput(double speed) {
 		return speed * Math.abs(speed);
@@ -36,12 +35,5 @@ public class OI /*GEVALD*/ {
 	
 	public double getRightJoystickY(){
 		return -adjustInput(rightJoystick.getY());
-	}
-	public double push() {
-		return SubsystemConstants.Gripper.OUT_SPEED.get();
-	}
-	
-	public double take() {
-		return SubsystemConstants.Gripper.GRIP_SPEED.get();
 	}
     }

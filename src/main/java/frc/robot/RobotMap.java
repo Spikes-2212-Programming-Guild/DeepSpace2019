@@ -16,16 +16,16 @@ public class RobotMap {
 	}
 
 	public interface DIO {
-		public static final int LIMIT =1;
+		public static final int LIMIT = 1;
 	}
 
 	public static interface PWM {
-		public static final int GRIPPER_MOTOR_1 =0;
-		public static final int GRIPPER_MOTOR_2 =1;
+		public static final int GRIPPER_MOTOR_1 = 0;
+		public static final int GRIPPER_MOTOR_2 = 1;
 	}
 
 	public static interface ANALOG {
-		public static final int LIGHT =0;
-		
+		public static final int LIGHT = 0;
+
 	}
 }

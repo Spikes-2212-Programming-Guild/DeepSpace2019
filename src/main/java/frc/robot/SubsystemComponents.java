@@ -35,7 +35,7 @@ public class SubsystemComponents {
 	public static class Gripper {
 		public static final VictorSP MOTOR_1 = new VictorSP(RobotMap.PWM.GRIPPER_MOTOR_1);
 		public static final VictorSP MOTOR_2 = new VictorSP(RobotMap.PWM.GRIPPER_MOTOR_2);
-		public static final AnalogInput LIGHT_SENSOR =new AnalogInput(RobotMap.ANALOG.LIGHT);
-		public static final DigitalInput LIMIT =new DigitalInput(RobotMap.DIO.LIMIT);
+		public static final AnalogInput LIGHT_SENSOR = new AnalogInput(RobotMap.ANALOG.LIGHT);
+		public static final DigitalInput LIMIT = new DigitalInput(RobotMap.DIO.LIMIT);
 	}
 }

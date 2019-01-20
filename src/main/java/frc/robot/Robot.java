@@ -31,8 +31,9 @@ public class Robot extends TimedRobot {
 		Gripper = new BasicSubsystem((speed) -> {
 			SubsystemComponents.Gripper.MOTOR_1.set(speed);
 			SubsystemComponents.Gripper.MOTOR_2.set(-speed);
-		}, new TwoLimits(()->SubsystemComponents.Gripper.LIMIT.get() || SubsystemComponents.Gripper.LIGHT_SENSOR.getVoltage()<5, ()-> false));
-		
+		}, new TwoLimits(() -> SubsystemComponents.Gripper.LIMIT.get()
+				|| SubsystemComponents.Gripper.LIGHT_SENSOR.getVoltage() < 5, () -> false));
+
 	}
 
 	@Override
