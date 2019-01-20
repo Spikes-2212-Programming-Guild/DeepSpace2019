@@ -8,6 +8,7 @@
 package frc.robot;
 
 public class RobotMap {
+
     public interface CAN {
         public static final int MOTOR_LEFT1 = 0;
         public static final int MOTOR_LEFT2 = 1;
@@ -20,7 +21,11 @@ public class RobotMap {
         public static final int LIFT_ENCODER2 = 1;
         public static final int LIFT_LIMIT_UP = 2;
         public static final int LIFT_LIMIT_DOWN = 3;
-
+        
+        public static final int DRIVETRAIN_ENCODER_RIGHT1 = 0;
+      	public static final int DRIVETRAIN_ENCODER_RIGHT2 = 1;
+	      public static final int DRIVETRAIN_ENCODER_LEFT1 = 3;
+	      public static final int DRIVETRAIN_ENCODER_LEFT2 = 2;
     }
 
     public interface PWM {
