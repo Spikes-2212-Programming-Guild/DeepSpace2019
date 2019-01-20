@@ -1,4 +1,4 @@
-package src.main.java.frc.robot;
+package frc.robot;
 
 import java.util.function.Supplier;
 

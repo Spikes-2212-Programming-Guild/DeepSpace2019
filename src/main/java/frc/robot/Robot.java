@@ -8,7 +8,6 @@
 package frc.robot;
 
 import com.spikes2212.genericsubsystems.basicSubsystem.BasicSubsystem;
-import com.spikes2212.genericsubsystems.basicSubsystem.utils.limitationFunctions.Limitless;
 import com.spikes2212.genericsubsystems.basicSubsystem.utils.limitationFunctions.TwoLimits;
 import com.spikes2212.genericsubsystems.drivetrains.TankDrivetrain;
 import com.spikes2212.genericsubsystems.drivetrains.commands.DriveArcade;
@@ -32,8 +31,8 @@ public class Robot extends TimedRobot {
 		Gripper = new BasicSubsystem((speed) -> {
 			SubsystemComponents.Gripper.MOTOR_1.set(speed);
 			SubsystemComponents.Gripper.MOTOR_2.set(-speed);
-		}, new TwoLimits(minLimit, () -> false));
-
+		}, new TwoLimits(()->SubsystemComponents.Gripper.LIMIT.get() || SubsystemComponents.Gripper.LIGHT_SENSOR.getVoltage()<5, ()-> false));
+		
 	}
 
 	@Override

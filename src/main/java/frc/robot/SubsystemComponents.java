@@ -6,7 +6,6 @@ import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.VictorSP;
-import frc.robot.RobotMap;
 
 public class SubsystemComponents {
 	public static class Drivetrain {
@@ -36,7 +35,7 @@ public class SubsystemComponents {
 	public static class Gripper {
 		public static final VictorSP MOTOR_1 = new VictorSP(RobotMap.PWM.GRIPPER_MOTOR_1);
 		public static final VictorSP MOTOR_2 = new VictorSP(RobotMap.PWM.GRIPPER_MOTOR_2);
-		public static final AnalogInput LIGHTNING_BOLT =new AnalogInput(RobotMap.ANALOG.LIGHT);
+		public static final AnalogInput LIGHT_SENSOR =new AnalogInput(RobotMap.ANALOG.LIGHT);
 		public static final DigitalInput LIMIT =new DigitalInput(RobotMap.DIO.LIMIT);
 	}
 }
