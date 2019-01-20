@@ -24,7 +24,7 @@ public class RobotMap {
 		public static final int GRIPPER_MOTOR_2 =1;
 	}
 
-	public static interface ANALOG {
+	public static interface ANALOG_IN {
 		public static final int LIGHT =0;
 		
 	}
