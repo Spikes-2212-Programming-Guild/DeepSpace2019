@@ -14,7 +14,8 @@ public class SubsystemComponents {
 		public static final SpeedControllerGroup DRIVETRAIN_RIGHT = new SpeedControllerGroup(
 				new WPI_TalonSRX(RobotMap.CAN.MOTOR_RIGHT1), new WPI_TalonSRX(RobotMap.CAN.MOTOR_RIGHT2));
 
-	public static final Encoder DRIVETRAIN_ENCODER = new Encoder(RobotMap.DIO.DRIVETRAIN_ENCODER,RobotMap.DIO.DRIVETRAIN_ENCODER1);
+	public static final Encoder DRIVETRAIN_ENCODER_RIGHT = new Encoder(RobotMap.DIO.DRIVETRAIN_ENCODER_RIGHT1,RobotMap.DIO.DRIVETRAIN_ENCODER_RIGHT2);
+	public static final Encoder DRIVETRAIN_ENCODER_LEFT = new Encoder(RobotMap.DIO.DRIVETRAIN_ENCODER_LEFT1,RobotMap.DIO.DRIVETRAIN_ENCODER_LEFT2);
 
 	}
 
