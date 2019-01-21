@@ -29,8 +29,8 @@ public class RobotMap {
 
 		public static final int GRIPPER_LIMIT = 1;
 
-		public static final int ARM_LIMIT0 = 4;
-		public static final int ARM_LIMIT1 = 5;
+		public static final int ARM_LIMIT1 = 4;
+		public static final int ARM_LIMIT2 = 5;
 
 	}
 
