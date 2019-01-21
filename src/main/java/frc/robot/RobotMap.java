@@ -31,6 +31,7 @@ public class RobotMap {
     public interface PWM {
         public static final int LIFT_MOTOR1 = 0;
         public static final int LIFT_MOTOR2 = 1;
+        public static final int ARM_MOTOR = 3;
     }
 
 	public static interface ANALOG_IN {
