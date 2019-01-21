@@ -10,13 +10,15 @@ package frc.robot;
 import edu.wpi.first.wpilibj.Joystick;
 
 public class OI /* GEVALD */ {
+
 	public OI() {
+
 	}
 
 	private Joystick leftJoystick = new Joystick(1);
 	private Joystick rightJoystick = new Joystick(0);
 
-  public static double adjustInput(double speed) {
+	public static double adjustInput(double speed) {
 		return speed * Math.abs(speed);
 	}
 

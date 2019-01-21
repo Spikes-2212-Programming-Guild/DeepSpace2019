@@ -6,7 +6,7 @@ import java.util.function.Supplier;
 import frc.robot.SubsystemComponents;
 
 public class SubsystemConstants {
-  
+
 	public static interface Drivetrain {
 		public static final Supplier<Double> ORIENTATION_KP = ConstantHandler
 				.addConstantDouble("drivetrain - oriantation kp", 0.7);
@@ -17,17 +17,16 @@ public class SubsystemConstants {
 	}
 
 	public static class Lift {
-        public static final Supplier<Double> UP_SPEED = ConstantHandler.
-				addConstantDouble("Lift Up Speed", 0.9);
-        public static final Supplier<Double> STAYING_SPEED = ConstantHandler.
-				addConstantDouble("Lift Staying Speed",0.2);
-        public static final Supplier<Double> DOWN_SPEED = ConstantHandler
-                .addConstantDouble("Lift First Down Speed", -0.2);
+		public static final Supplier<Double> UP_SPEED = ConstantHandler.addConstantDouble("Lift Up Speed", 0.9);
+		public static final Supplier<Double> STAYING_SPEED = ConstantHandler.addConstantDouble("Lift Staying Speed",
+				0.2);
+		public static final Supplier<Double> DOWN_SPEED = ConstantHandler.addConstantDouble("Lift First Down Speed",
+				-0.2);
 	}
 
 	public static class Arm {
 		public static final Supplier<Double> ARM_SPEED = ConstantHandler.addConstantDouble("Arm speed", 0.5);
-  }
+	}
 
 	public static class Lock {
 

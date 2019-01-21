@@ -18,67 +18,80 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 
 public class Robot extends TimedRobot {
-    public static OI oi;
-    public static TankDrivetrain drivetrain;
-    public static BasicSubsystem lift;
-    public static BasicSubsystem arm;
 
-    @Override
-    public void robotInit() {
-        oi = new OI();
-        drivetrain = new TankDrivetrain(new InvertedConsumer(SubsystemComponents.Drivetrain.DRIVETRAIN_LEFT::set), SubsystemComponents.Drivetrain.DRIVETRAIN_RIGHT::set);
-        drivetrain.setDefaultCommand(new DriveArcade(drivetrain,()->oi.getLeftJoystickY(),()->oi.getRightJoystickX()));
-        lift = new BasicSubsystem(SubsystemComponents.Lift.LIFT_MOTORS::set, (Double speed) -> {
-            if (speed == 0) // The lift can always move with 0.
-                return true;
-            // Returns false if the lift tries to move up when its in its upper
-            // limit.
-            if (SubsystemComponents.Lift.LIMIT_UP.get() && speed > SubsystemConstants.Lift.STAYING_SPEED.get())
-                return false;
-            // Returns false if the lift tries to move down when its in its
-            // lower limit.
-            if (SubsystemComponents.Lift.LIMIT_DOWN.get() && speed < SubsystemConstants.Lift.STAYING_SPEED.get())
-                return false;
-            return true;
-        });
+	public static OI oi;
+	public static TankDrivetrain drivetrain;
+	public static BasicSubsystem gripper;
+	public static BasicSubsystem lift;
+	public static BasicSubsystem arm;
 
-        arm = new BasicSubsystem(SubsystemComponents.Arm.ARM_MOTOR::set, new TwoLimits(SubsystemsComponents.Arm.ARM_LIMIT0::get, SubsystemsComponents.Arm.ARM_LIMIT1::get));
-    }
+	@Override
+	public void robotInit() {
 
+		drivetrain = new TankDrivetrain(new InvertedConsumer(SubsystemComponents.Drivetrain.LEFT::set),
+				SubsystemComponents.Drivetrain.RIGHT::set);
 
-    @Override
-    public void robotPeriodic() {
-    }
+		drivetrain.setDefaultCommand(
+				new DriveArcade(drivetrain, () -> oi.getLeftJoystickY(), () -> oi.getRightJoystickX()));
 
-    @Override
-    public void disabledInit() {
-    }
+		gripper = new BasicSubsystem((speed) -> {
+			SubsystemComponents.Gripper.MOTOR_1.set(speed);
+			SubsystemComponents.Gripper.MOTOR_2.set(-speed);
+		}, new TwoLimits(() -> SubsystemComponents.Gripper.LIMIT.get() || SubsystemComponents.Gripper.LIGHT_SENSOR
+				.getVoltage() < SubsystemConstants.Gripper.LIMIT_VOLTAGE.get(), () -> false));
 
-    @Override
-    public void disabledPeriodic() {
-        Scheduler.getInstance().run();
-    }
+		lift = new BasicSubsystem(SubsystemComponents.Lift.GEARBOX::set, (Double speed) -> {
+			if (speed == 0) // The lift can always move with 0.
+				return true;
+			// Returns false if the lift tries to move up when its in its upper
+			// limit.
+			if (SubsystemComponents.Lift.LIMIT_UP.get() && speed > SubsystemConstants.Lift.STAYING_SPEED.get())
+				return false;
+			// Returns false if the lift tries to move down when its in its
+			// lower limit.
+			if (SubsystemComponents.Lift.LIMIT_DOWN.get() && speed < SubsystemConstants.Lift.STAYING_SPEED.get())
+				return false;
+			return true;
+		});
 
-    @Override
-    public void autonomousInit() {
-    }
+		arm = new BasicSubsystem(SubsystemComponents.Arm.MOTOR::set,
+				new TwoLimits(SubsystemComponents.Arm.LIMIT1::get, SubsystemComponents.Arm.LIMIT2::get));
 
+		oi = new OI();
+	}
 
-    @Override
-    public void autonomousPeriodic() {
-        Scheduler.getInstance().run();
-    }
+	@Override
+	public void robotPeriodic() {
+	}
 
-    @Override
-    public void teleopInit() {
-    }
+	@Override
+	public void disabledInit() {
+	}
 
-    @Override
-    public void teleopPeriodic() {
-        Scheduler.getInstance().run();
-    }
+	@Override
+	public void disabledPeriodic() {
+		Scheduler.getInstance().run();
+	}
 
-    @Override
-    public void testPeriodic() {
-    }
+	@Override
+	public void autonomousInit() {
+	}
+
+	@Override
+	public void autonomousPeriodic() {
+		Scheduler.getInstance().run();
+	}
+
+	@Override
+	public void teleopInit() {
+	}
+
+	@Override
+	public void teleopPeriodic() {
+		Scheduler.getInstance().run();
+	}
+
+	@Override
+	public void testPeriodic() {
+	}
 }
