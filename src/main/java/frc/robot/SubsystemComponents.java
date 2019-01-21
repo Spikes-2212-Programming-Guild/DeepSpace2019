@@ -10,13 +10,15 @@ import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.VictorSP;
 
 public class SubsystemComponents {
-	
+
 	public static class Drivetrain {
 		public static final SpeedControllerGroup LEFT = new SpeedControllerGroup(
-				new WPI_TalonSRX(RobotMap.CAN.DRIVETRAIN_MOTOR_LEFT1), new WPI_TalonSRX(RobotMap.CAN.DRIVETRAIN_MOTOR_LEFT2));
+				new WPI_TalonSRX(RobotMap.CAN.DRIVETRAIN_MOTOR_LEFT1),
+				new WPI_TalonSRX(RobotMap.CAN.DRIVETRAIN_MOTOR_LEFT2));
 
 		public static final SpeedControllerGroup RIGHT = new SpeedControllerGroup(
-				new WPI_TalonSRX(RobotMap.CAN.DRIVETRAIN_MOTOR_RIGHT1), new WPI_TalonSRX(RobotMap.CAN.DRIVETRAIN_MOTOR_RIGHT2));
+				new WPI_TalonSRX(RobotMap.CAN.DRIVETRAIN_MOTOR_RIGHT1),
+				new WPI_TalonSRX(RobotMap.CAN.DRIVETRAIN_MOTOR_RIGHT2));
 
 		public static final Encoder ENCODER_RIGHT = new Encoder(RobotMap.DIO.DRIVETRAIN_ENCODER_RIGHT1,
 				RobotMap.DIO.DRIVETRAIN_ENCODER_RIGHT2);
@@ -33,9 +35,9 @@ public class SubsystemComponents {
 	}
 
 	public static class Arm {
-    public static final VictorSP ARM_MOTOR = new VictorSP(RobotMap.PWM.ARM_MOTOR);
-    public static final DigitalInput ARM_LIMIT0 = new DigitalInput(RobotMap.DIO.ARM_LIMIT0);
-    public static final DigitalInput ARM_LIMIT1 = new DigitalInput(RobotMap.DIO.ARM_LIMIT1);
+		public static final VictorSP ARM_MOTOR = new VictorSP(RobotMap.PWM.ARM_MOTOR);
+		public static final DigitalInput ARM_LIMIT0 = new DigitalInput(RobotMap.DIO.ARM_LIMIT0);
+		public static final DigitalInput ARM_LIMIT1 = new DigitalInput(RobotMap.DIO.ARM_LIMIT1);
 	}
 
 	public static class Lock {

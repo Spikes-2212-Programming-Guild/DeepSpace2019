@@ -28,9 +28,9 @@ public class RobotMap {
 		public static final int DRIVETRAIN_ENCODER_LEFT2 = 2;
 
 		public static final int GRIPPER_LIMIT = 1;
-    
-    public static final int ARM_LIMIT0 = 4;
-	  public static final int ARM_LIMIT1 = 5;
+
+		public static final int ARM_LIMIT0 = 4;
+		public static final int ARM_LIMIT1 = 5;
 
 	}
 
@@ -40,12 +40,12 @@ public class RobotMap {
 
 		public static final int GRIPPER_MOTOR_1 = 0;
 		public static final int GRIPPER_MOTOR_2 = 1;
-	
-    public static final int ARM_MOTOR = 3;
-  }
+
+		public static final int ARM_MOTOR = 3;
+	}
 
 	public static interface ANALOG_IN {
-    public static final int GRIPPER_LIGHT_SENSOR = 0;
+		public static final int GRIPPER_LIGHT_SENSOR = 0;
 	}
 
 }

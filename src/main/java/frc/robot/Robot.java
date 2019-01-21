@@ -18,7 +18,7 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 
 public class Robot extends TimedRobot {
-  
+
 	public static OI oi;
 	public static TankDrivetrain drivetrain;
 	public static BasicSubsystem gripper;
@@ -53,9 +53,10 @@ public class Robot extends TimedRobot {
 				return false;
 			return true;
 		});
-    
-    arm = new BasicSubsystem(SubsystemComponents.Arm.ARM_MOTOR::set, new TwoLimits(SubsystemComponents.Arm.ARM_LIMIT0::get, SubsystemComponents.Arm.ARM_LIMIT1::get));
-    
+
+		arm = new BasicSubsystem(SubsystemComponents.Arm.ARM_MOTOR::set,
+				new TwoLimits(SubsystemComponents.Arm.ARM_LIMIT0::get, SubsystemComponents.Arm.ARM_LIMIT1::get));
+
 		oi = new OI();
 	}
 
