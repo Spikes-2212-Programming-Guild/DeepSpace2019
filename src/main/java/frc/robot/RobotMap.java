@@ -41,7 +41,7 @@ public class RobotMap {
 		public static final int GRIPPER_MOTOR_1 = 0;
 		public static final int GRIPPER_MOTOR_2 = 1;
 	
-    public static final int ARM_MOTOR = 3
+    public static final int ARM_MOTOR = 3;
   }
 
 	public static interface ANALOG_IN {
