@@ -25,7 +25,7 @@ public class SubsystemConstants {
 	}
 
 	public static class Arm {
-
+    public static final Supplier<Double> ARM_SPEED = ConstantHandler.addConstantDouble("Arm speed", 0.5);
 	}
 
 	public static class Lock {
@@ -44,4 +44,5 @@ public class SubsystemConstants {
 		public static final Supplier<Double> LIMIT_VOLTAGE = ConstantHandler
 				.addConstantDouble("limit for entering ball", 5);
 	}
+
 }
