@@ -20,16 +20,16 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 public class Robot extends TimedRobot {
 	public static OI oi;
 	public static TankDrivetrain drivetrain;
-	public static BasicSubsystem Gripper;
+	public static BasicSubsystem gripper;
 
 	@Override
 	public void robotInit() {
 		oi = new OI();
-		drivetrain = new TankDrivetrain(new InvertedConsumer(SubsystemComponents.Drivetrain.DRIVETRAIN_LEFT::set),
-				SubsystemComponents.Drivetrain.DRIVETRAIN_RIGHT::set);
+		drivetrain = new TankDrivetrain(new InvertedConsumer(SubsystemComponents.Drivetrain.LEFT::set),
+				SubsystemComponents.Drivetrain.RIGHT::set);
 		drivetrain.setDefaultCommand(
 				new DriveArcade(drivetrain, () -> oi.getLeftJoystickY(), () -> oi.getRightJoystickX()));
-		Gripper = new BasicSubsystem((speed) -> {
+		gripper = new BasicSubsystem((speed) -> {
 			SubsystemComponents.Gripper.MOTOR_1.set(speed);
 			SubsystemComponents.Gripper.MOTOR_2.set(-speed);
 		}, new TwoLimits(() -> SubsystemComponents.Gripper.LIMIT.get() || SubsystemComponents.Gripper.LIGHT_SENSOR

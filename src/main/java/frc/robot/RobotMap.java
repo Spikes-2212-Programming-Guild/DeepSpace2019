@@ -10,10 +10,10 @@ package frc.robot;
 public class RobotMap {
 
 	public interface CAN {
-		public static final int MOTOR_LEFT1 = 0;
-		public static final int MOTOR_LEFT2 = 1;
-		public static final int MOTOR_RIGHT1 = 2;
-		public static final int MOTOR_RIGHT2 = 3;
+		public static final int DRIVETRAIN_MOTOR_LEFT1 = 0;
+		public static final int DRIVETRAIN_MOTOR_LEFT2 = 1;
+		public static final int DRIVETRAIN_MOTOR_RIGHT1 = 2;
+		public static final int DRIVETRAIN_MOTOR_RIGHT2 = 3;
 	}
 
 	public interface DIO {
@@ -27,7 +27,7 @@ public class RobotMap {
 		public static final int DRIVETRAIN_ENCODER_LEFT1 = 3;
 		public static final int DRIVETRAIN_ENCODER_LEFT2 = 2;
 
-		public static final int LIMIT = 1;
+		public static final int GRIPPER_LIMIT = 1;
 
 	}
 
@@ -39,8 +39,8 @@ public class RobotMap {
 		public static final int GRIPPER_MOTOR_2 = 1;
 	}
 
-	public static interface ANALOG {
-		public static final int LIGHT_SENSOR = 0;
+	public static interface ANALOG_IN {
+		public static final int GRIPPER_LIGHT_SENSOR = 0;
 
 	}
 
