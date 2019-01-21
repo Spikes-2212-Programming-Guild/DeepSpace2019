@@ -1,9 +1,11 @@
 package frc.robot;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
-
 import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.DigitalInput;
+import edu.wpi.first.wpilibj.Encoder;
+import edu.wpi.first.wpilibj.PWMTalonSRX;
+import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.VictorSP;
 
@@ -14,6 +16,10 @@ public class SubsystemComponents {
 
 		public static final SpeedControllerGroup DRIVETRAIN_RIGHT = new SpeedControllerGroup(
 				new WPI_TalonSRX(RobotMap.CAN.MOTOR_RIGHT1), new WPI_TalonSRX(RobotMap.CAN.MOTOR_RIGHT2));
+
+	public static final Encoder DRIVETRAIN_ENCODER_RIGHT = new Encoder(RobotMap.DIO.DRIVETRAIN_ENCODER_RIGHT1,RobotMap.DIO.DRIVETRAIN_ENCODER_RIGHT2);
+	public static final Encoder DRIVETRAIN_ENCODER_LEFT = new Encoder(RobotMap.DIO.DRIVETRAIN_ENCODER_LEFT1,RobotMap.DIO.DRIVETRAIN_ENCODER_LEFT2);
+
 	}
 
 	public static class Lift {
