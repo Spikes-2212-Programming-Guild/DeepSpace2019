@@ -40,7 +40,7 @@ public class Robot extends TimedRobot {
             return true;
         });
 
-        arm = new BasicSubsystem(SubsystemComponents.Arm.ARM_MOTOR::set, new TwoLimits(SubsystemsComponents.Arm.ARM_LIMIT0::get, SubsystemsComponents.Arm.ARM_LIMIT0::get));
+        arm = new BasicSubsystem(SubsystemComponents.Arm.ARM_MOTOR::set, new TwoLimits(SubsystemsComponents.Arm.ARM_LIMIT0::get, SubsystemsComponents.Arm.ARM_LIMIT1::get));
     }
 
 
