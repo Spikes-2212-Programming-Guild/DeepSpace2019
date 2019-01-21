@@ -19,28 +19,29 @@ public class Robot extends TimedRobot {
     public static OI oi;
     public static TankDrivetrain drivetrain;
     public static BasicSubsystem lift;
+    public static BasicSubsystem arm;
 
     @Override
     public void robotInit() {
         oi = new OI();
         drivetrain = new TankDrivetrain(new InvertedConsumer(SubsystemComponents.Drivetrain.DRIVETRAIN_LEFT::set), SubsystemComponents.Drivetrain.DRIVETRAIN_RIGHT::set);
         drivetrain.setDefaultCommand(new DriveArcade(drivetrain,()->oi.getLeftJoystickY(),()->oi.getRightJoystickX()));
-            lift = new BasicSubsystem(SubsystemComponents.Lift.LIFT_MOTORS::set, (Double speed) -> {
-                if (speed == 0) // The lift can always move with 0.
-                    return true;
-                // Returns false if the lift tries to move up when its in its upper
-                // limit.
-                if (SubsystemComponents.Lift.LIMIT_UP.get() && speed > SubsystemConstants.Lift.STAYING_SPEED.get())
-                    return false;
-                // Returns false if the lift tries to move down when its in its
-                // lower limit.
-                if (SubsystemComponents.Lift.LIMIT_DOWN.get() && speed < SubsystemConstants.Lift.STAYING_SPEED.get())
-                    return false;
+        lift = new BasicSubsystem(SubsystemComponents.Lift.LIFT_MOTORS::set, (Double speed) -> {
+            if (speed == 0) // The lift can always move with 0.
                 return true;
-            });
+            // Returns false if the lift tries to move up when its in its upper
+            // limit.
+            if (SubsystemComponents.Lift.LIMIT_UP.get() && speed > SubsystemConstants.Lift.STAYING_SPEED.get())
+                return false;
+            // Returns false if the lift tries to move down when its in its
+            // lower limit.
+            if (SubsystemComponents.Lift.LIMIT_DOWN.get() && speed < SubsystemConstants.Lift.STAYING_SPEED.get())
+                return false;
+            return true;
+        });
 
-
-        }
+        arm = new BasicSubsystem(SubsystemComponents.Arm.ARM_MOTOR::set, new TwoLimits(SubsystemsComponents.Arm.ARM_LIMIT0::get, SubsystemsComponents.Arm.ARM_LIMIT0::get));
+    }
 
 
     @Override
