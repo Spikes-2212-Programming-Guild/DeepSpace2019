@@ -19,6 +19,6 @@ public class SubsystemConstants {
 	}
 
 	public static class Arm {
-
+		public static final Supplier<Double> ARM_SPEED = ConstantHandler.addConstantDouble("Arm speed", 0.5);
     }
 }
