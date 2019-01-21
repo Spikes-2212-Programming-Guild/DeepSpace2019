@@ -16,7 +16,7 @@ public class OI /* GEVALD */ {
 	private Joystick leftJoystick = new Joystick(1);
 	private Joystick rightJoystick = new Joystick(0);
 
-	public static double adjustInput(double speed) {
+  public static double adjustInput(double speed) {
 		return speed * Math.abs(speed);
 	}
 
@@ -35,4 +35,5 @@ public class OI /* GEVALD */ {
 	public double getRightJoystickY() {
 		return -adjustInput(rightJoystick.getY());
 	}
+
 }
