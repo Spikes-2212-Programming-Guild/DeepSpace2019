@@ -31,9 +31,11 @@ public class SubsystemComponents {
     public static final DigitalInput LIMIT_DOWN = new DigitalInput(RobotMap.DIO.LIFT_LIMIT_DOWN);
     }
 
-
-  public static class Arm {
-
+    public static class Arm {
+        public static final SpeedController ARM_MOTOR = new VictorSP(RobotMap.PWM.ARM_MOTOR);
+        public static final DigitalInput ARM_LIMIT0 = new DigitalInput(RobotMap.DIO.ARM_LIMIT0);
+        public static final DigitalInput ARM_LIMIT1 = new DigitalInput(RobotMap.DIO.ARM_LIMIT1);
+    }
   }
 
   public static class Lock {
