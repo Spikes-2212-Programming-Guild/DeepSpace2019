@@ -9,30 +9,33 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
 
-public class OI /*GEVALD*/ {
-    public OI() {
-    }
+public class OI /* GEVALD */ {
 
-    private Joystick leftJoystick = new Joystick(1);
-    private Joystick rightJoystick = new Joystick(0);
+	public OI() {
 
-    public static double adjustInput(double speed) {
-        return speed * Math.abs(speed);
-    }
+	}
 
-    public double getLeftJoystickX() {
-        return -adjustInput(leftJoystick.getX());
-    }
+	private Joystick leftJoystick = new Joystick(1);
+	private Joystick rightJoystick = new Joystick(0);
 
-    public double getLeftJoystickY() {
-        return -adjustInput(leftJoystick.getY());
-    }
+	public static double adjustInput(double speed) {
+		return speed * Math.abs(speed);
+	}
 
-    public double getRightJoystickX() {
-        return -adjustInput(rightJoystick.getX());
-    }
+	public double getLeftJoystickX() {
+		return -adjustInput(leftJoystick.getX());
+	}
 
-    public double getRightJoystickY() {
-        return -adjustInput(rightJoystick.getY());
-    }
+	public double getLeftJoystickY() {
+		return -adjustInput(leftJoystick.getY());
+	}
+
+	public double getRightJoystickX() {
+		return -adjustInput(rightJoystick.getX());
+	}
+
+	public double getRightJoystickY() {
+		return -adjustInput(rightJoystick.getY());
+	}
+
 }
