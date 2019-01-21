@@ -46,6 +46,7 @@ public class RobotMap {
 
 	public static interface ANALOG_IN {
 		public static final int GRIPPER_LIGHT_SENSOR = 0;
+		public static final int ARM_POTENTIOMETER = 1;
 	}
 
 }
