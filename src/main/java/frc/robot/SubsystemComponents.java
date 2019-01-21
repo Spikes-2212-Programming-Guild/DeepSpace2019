@@ -22,7 +22,7 @@ public class SubsystemComponents {
     }
 
     public static class Arm {
-
+        public static final SpeedController ARM_MOTOR = new VictorSP(RobotMap.PWM.ARM_MOTOR);
     }
 
     public static class Lock {
