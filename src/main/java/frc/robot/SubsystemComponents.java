@@ -17,8 +17,10 @@ public class SubsystemComponents {
 		public static final SpeedControllerGroup DRIVETRAIN_RIGHT = new SpeedControllerGroup(
 				new WPI_TalonSRX(RobotMap.CAN.MOTOR_RIGHT1), new WPI_TalonSRX(RobotMap.CAN.MOTOR_RIGHT2));
 
-	public static final Encoder DRIVETRAIN_ENCODER_RIGHT = new Encoder(RobotMap.DIO.DRIVETRAIN_ENCODER_RIGHT1,RobotMap.DIO.DRIVETRAIN_ENCODER_RIGHT2);
-	public static final Encoder DRIVETRAIN_ENCODER_LEFT = new Encoder(RobotMap.DIO.DRIVETRAIN_ENCODER_LEFT1,RobotMap.DIO.DRIVETRAIN_ENCODER_LEFT2);
+		public static final Encoder DRIVETRAIN_ENCODER_RIGHT = new Encoder(RobotMap.DIO.DRIVETRAIN_ENCODER_RIGHT1,
+				RobotMap.DIO.DRIVETRAIN_ENCODER_RIGHT2);
+		public static final Encoder DRIVETRAIN_ENCODER_LEFT = new Encoder(RobotMap.DIO.DRIVETRAIN_ENCODER_LEFT1,
+				RobotMap.DIO.DRIVETRAIN_ENCODER_LEFT2);
 
 	}
 
@@ -41,7 +43,7 @@ public class SubsystemComponents {
 	public static class Gripper {
 		public static final VictorSP MOTOR_1 = new VictorSP(RobotMap.PWM.GRIPPER_MOTOR_1);
 		public static final VictorSP MOTOR_2 = new VictorSP(RobotMap.PWM.GRIPPER_MOTOR_2);
-		public static final AnalogInput LIGHT_SENSOR = new AnalogInput(RobotMap.ANALOG.LIGHT);
+		public static final AnalogInput LIGHT_SENSOR = new AnalogInput(RobotMap.ANALOG.LIGHT_SENSOR);
 		public static final DigitalInput LIMIT = new DigitalInput(RobotMap.DIO.LIMIT);
 	}
 }

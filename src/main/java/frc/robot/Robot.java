@@ -15,7 +15,6 @@ import com.spikes2212.utils.InvertedConsumer;
 
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
-import frc.robot.SubsystemConstants;
 
 public class Robot extends TimedRobot {
 	public static OI oi;
@@ -32,8 +31,8 @@ public class Robot extends TimedRobot {
 		Gripper = new BasicSubsystem((speed) -> {
 			SubsystemComponents.Gripper.MOTOR_1.set(speed);
 			SubsystemComponents.Gripper.MOTOR_2.set(-speed);
-		}, new TwoLimits(() -> SubsystemComponents.Gripper.LIMIT.get()
-				|| SubsystemComponents.Gripper.LIGHT_SENSOR.getVoltage() < SubsystemConstants.Gripper.LIMIT_VOLTAGE.get(), () -> false));
+		}, new TwoLimits(() -> SubsystemComponents.Gripper.LIMIT.get() || SubsystemComponents.Gripper.LIGHT_SENSOR
+				.getVoltage() < SubsystemConstants.Gripper.LIMIT_VOLTAGE.get(), () -> false));
 
 	}
 

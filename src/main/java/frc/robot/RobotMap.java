@@ -16,16 +16,13 @@ public class RobotMap {
 	}
 
 	public interface DIO {
-<<<<<<< HEAD
-		public static final int LIMIT = 1;
-=======
-	public static final int LIMIT =1;
 
-	public static final int DRIVETRAIN_ENCODER_RIGHT1 = 0;
-	public static final int DRIVETRAIN_ENCODER_RIGHT2 = 1;
-	public static final int DRIVETRAIN_ENCODER_LEFT1 = 3;
-	public static final int DRIVETRAIN_ENCODER_LEFT2 = 2;
->>>>>>> branch 'leo(abashcha)-griper' of https://github.com/Spikes-2212-Programming-Guild/DeepSpace2019
+		public static final int LIMIT = 1;
+
+		public static final int DRIVETRAIN_ENCODER_RIGHT1 = 0;
+		public static final int DRIVETRAIN_ENCODER_RIGHT2 = 1;
+		public static final int DRIVETRAIN_ENCODER_LEFT1 = 3;
+		public static final int DRIVETRAIN_ENCODER_LEFT2 = 2;
 	}
 
 	public static interface PWM {
@@ -33,14 +30,8 @@ public class RobotMap {
 		public static final int GRIPPER_MOTOR_2 = 1;
 	}
 
-<<<<<<< HEAD
 	public static interface ANALOG {
 		public static final int LIGHT_SENSOR = 0;
 
-=======
-	public static interface ANALOG_IN {
-		public static final int LIGHT =0;
-		
->>>>>>> branch 'leo(abashcha)-griper' of https://github.com/Spikes-2212-Programming-Guild/DeepSpace2019
 	}
 }
