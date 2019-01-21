@@ -18,7 +18,7 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 
 public class Robot extends TimedRobot {
-  public static OI oi;
+	public static OI oi;
 	public static TankDrivetrain drivetrain;
 	public static BasicSubsystem Gripper;
 
