@@ -7,6 +7,7 @@
 
 package frc.robot;
 
+import com.spikes2212.dashboard.DashBoardController;
 import com.spikes2212.genericsubsystems.basicSubsystem.BasicSubsystem;
 
 import com.spikes2212.genericsubsystems.basicSubsystem.utils.limitationFunctions.TwoLimits;
@@ -16,14 +17,19 @@ import com.spikes2212.utils.InvertedConsumer;
 
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Robot extends TimedRobot {
-
-	public static OI oi;
+	
+	// defining subsystems
 	public static TankDrivetrain drivetrain;
 	public static BasicSubsystem gripper;
 	public static BasicSubsystem lift;
 	public static BasicSubsystem arm;
+	
+	// defining utils
+	public static OI oi;
+	public static DashBoardController dbc;
 
 	@Override
 	public void robotInit() {
@@ -58,6 +64,7 @@ public class Robot extends TimedRobot {
 				new TwoLimits(SubsystemComponents.Arm.LIMIT1::get, SubsystemComponents.Arm.LIMIT2::get));
 
 		oi = new OI();
+		dbc = new DashBoardController();
 	}
 
 	@Override
@@ -66,11 +73,13 @@ public class Robot extends TimedRobot {
 
 	@Override
 	public void disabledInit() {
+		
 	}
 
 	@Override
 	public void disabledPeriodic() {
 		Scheduler.getInstance().run();
+		dbc.update();
 	}
 
 	@Override
@@ -80,6 +89,7 @@ public class Robot extends TimedRobot {
 	@Override
 	public void autonomousPeriodic() {
 		Scheduler.getInstance().run();
+		dbc.update();
 	}
 
 	@Override
@@ -89,9 +99,11 @@ public class Robot extends TimedRobot {
 	@Override
 	public void teleopPeriodic() {
 		Scheduler.getInstance().run();
+		dbc.update();
 	}
 
 	@Override
 	public void testPeriodic() {
+		dbc.update();
 	}
 }
