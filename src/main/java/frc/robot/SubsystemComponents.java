@@ -4,10 +4,12 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 
 import edu.wpi.first.wpilibj.AnalogInput;
+import edu.wpi.first.wpilibj.AnalogPotentiometer;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.VictorSP;
+import edu.wpi.first.wpilibj.interfaces.Potentiometer;
 
 public class SubsystemComponents {
 
@@ -38,6 +40,7 @@ public class SubsystemComponents {
 		public static final VictorSP MOTOR = new VictorSP(RobotMap.PWM.ARM_MOTOR);
 		public static final DigitalInput LIMIT1 = new DigitalInput(RobotMap.DIO.ARM_LIMIT1);
 		public static final DigitalInput LIMIT2 = new DigitalInput(RobotMap.DIO.ARM_LIMIT2);
+		public static final Potentiometer POTENTIO = new AnalogPotentiometer(RobotMap.ANALOG_IN.ARM_POTENTIOMETER);
 	}
 
 	public static class Lock {
