@@ -28,7 +28,7 @@ public class SubsystemComponents {
 
 	public static class Lift {
 		public static final SpeedControllerGroup GEARBOX = new SpeedControllerGroup(
-				new WPI_VictorSPX(RobotMap.PWM.LIFT_MOTOR1), new WPI_VictorSPX((RobotMap.PWM.LIFT_MOTOR2)));
+				new WPI_TalonSRX(RobotMap.CAN.LIFT_MOTOR1), new WPI_TalonSRX((RobotMap.CAN.LIFT_MOTOR2)));
 		public static final Encoder ENCODER = new Encoder(RobotMap.DIO.LIFT_ENCODER1, RobotMap.DIO.LIFT_ENCODER2);
 		public static final DigitalInput LIMIT_UP = new DigitalInput(RobotMap.DIO.LIFT_LIMIT_UP);
 		public static final DigitalInput LIMIT_DOWN = new DigitalInput(RobotMap.DIO.LIFT_LIMIT_DOWN);
