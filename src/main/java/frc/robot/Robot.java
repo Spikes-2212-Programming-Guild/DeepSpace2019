@@ -20,13 +20,13 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Robot extends TimedRobot {
-	
+
 	// defining subsystems
 	public static TankDrivetrain drivetrain;
 	public static BasicSubsystem gripper;
 	public static BasicSubsystem lift;
 	public static BasicSubsystem arm;
-	
+
 	// defining utils
 	public static OI oi;
 	public static DashBoardController dbc;
@@ -36,9 +36,6 @@ public class Robot extends TimedRobot {
 
 		drivetrain = new TankDrivetrain(new InvertedConsumer(SubsystemComponents.Drivetrain.LEFT::set),
 				SubsystemComponents.Drivetrain.RIGHT::set);
-
-		drivetrain.setDefaultCommand(
-				new DriveArcade(drivetrain, () -> oi.getLeftJoystickY(), () -> oi.getRightJoystickX()));
 
 		gripper = new BasicSubsystem((speed) -> {
 			SubsystemComponents.Gripper.MOTOR_1.set(speed);
@@ -65,6 +62,9 @@ public class Robot extends TimedRobot {
 
 		oi = new OI();
 		dbc = new DashBoardController();
+
+		drivetrain.setDefaultCommand(
+				new DriveArcade(drivetrain, () -> oi.getLeftJoystickY(), () -> oi.getRightJoystickX()));
 	}
 
 	@Override
@@ -73,7 +73,7 @@ public class Robot extends TimedRobot {
 
 	@Override
 	public void disabledInit() {
-		
+
 	}
 
 	@Override
