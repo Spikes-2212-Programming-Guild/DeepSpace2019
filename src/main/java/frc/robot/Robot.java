@@ -61,7 +61,7 @@ public class Robot extends TimedRobot {
 		});
 
 		arm = new BasicSubsystem(SubsystemComponents.Arm.MOTOR::set,
-				new TwoLimits(SubsystemComponents.Arm.LIMIT1::get, SubsystemComponents.Arm.LIMIT2::get));
+				new TwoLimits(SubsystemComponents.Arm.FORWARD_LIMIT::get, SubsystemComponents.Arm.REAR_LIMIT::get));
 
 		oi = new OI();
 		dbc = new DashBoardController();
