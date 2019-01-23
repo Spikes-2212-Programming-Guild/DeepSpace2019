@@ -57,7 +57,7 @@ dependencies {
     nativeZip wpi.deps.vendor.jni(wpi.platforms.roborio)
     nativeDesktopZip wpi.deps.vendor.jni(wpi.platforms.desktop)
     testCompile 'junit:junit:4.12'
-    compile "com.spikes2212:sl:3.0.0"
+    compile "com.spikes2212:sl:3.1.0"
     compile "com.ctre.phoenix:api-java:5.12.1"
     compile "com.ctre.phoenix:wpiapi-java:5.12.1"
 }

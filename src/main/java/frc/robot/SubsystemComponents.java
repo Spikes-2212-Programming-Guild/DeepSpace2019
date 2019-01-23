@@ -48,7 +48,8 @@ public class SubsystemComponents {
 	}
 
 	public static class Latch {
-
+		public static final VictorSP MOTOR = new VictorSP(RobotMap.PWM.LATCH_MOTOR);
+		public static final DigitalInput LIMIT = new DigitalInput(RobotMap.DIO.LATCH_LIMIT);
 	}
 
 	public static class Gripper {

@@ -33,7 +33,7 @@ public class SubsystemConstants {
 	}
 
 	public static class Latch {
-
+		public static final Supplier<Double> LATCH_SPEED = ConstantHandler.addConstantDouble("Latch Speed", 0.5);
 	}
 
 	public static class Gripper {

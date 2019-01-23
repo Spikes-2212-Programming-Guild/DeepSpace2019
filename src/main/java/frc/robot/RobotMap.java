@@ -31,7 +31,8 @@ public class RobotMap {
 
 		public static final int ARM_LIMIT1 = 4;
 		public static final int ARM_LIMIT2 = 5;
-
+		
+		public static final int LATCH_LIMIT = 6;
 	}
 
 	public interface PWM {
@@ -42,6 +43,8 @@ public class RobotMap {
 		public static final int GRIPPER_MOTOR_2 = 1;
 
 		public static final int ARM_MOTOR = 3;
+
+		public static final int LATCH_MOTOR = 4;
 	}
 
 	public static interface ANALOG_IN {
