@@ -8,7 +8,8 @@
 package frc.robot;
 
 import com.spikes2212.genericsubsystems.basicSubsystem.BasicSubsystem;
-
+import com.spikes2212.genericsubsystems.basicSubsystem.utils.limitationFunctions.MaxLimit;
+import com.spikes2212.genericsubsystems.basicSubsystem.utils.limitationFunctions.MinLimit;
 import com.spikes2212.genericsubsystems.basicSubsystem.utils.limitationFunctions.TwoLimits;
 import com.spikes2212.genericsubsystems.drivetrains.TankDrivetrain;
 import com.spikes2212.genericsubsystems.drivetrains.commands.DriveArcade;
@@ -24,6 +25,7 @@ public class Robot extends TimedRobot {
 	public static BasicSubsystem gripper;
 	public static BasicSubsystem lift;
 	public static BasicSubsystem arm;
+	public static BasicSubsystem latch;
 
 	@Override
 	public void robotInit() {
@@ -37,8 +39,8 @@ public class Robot extends TimedRobot {
 		gripper = new BasicSubsystem((speed) -> {
 			SubsystemComponents.Gripper.MOTOR_1.set(speed);
 			SubsystemComponents.Gripper.MOTOR_2.set(-speed);
-		}, new TwoLimits(() -> SubsystemComponents.Gripper.LIMIT.get() || SubsystemComponents.Gripper.LIGHT_SENSOR
-				.getVoltage() < SubsystemConstants.Gripper.LIMIT_VOLTAGE.get(), () -> false));
+		}, new MinLimit(() -> SubsystemComponents.Gripper.LIMIT.get() || SubsystemComponents.Gripper.LIGHT_SENSOR
+				.getVoltage() < SubsystemConstants.Gripper.LIMIT_VOLTAGE.get()));
 
 		lift = new BasicSubsystem(SubsystemComponents.Lift.GEARBOX::set, (Double speed) -> {
 			if (speed == 0) // The lift can always move with 0.
@@ -57,6 +59,8 @@ public class Robot extends TimedRobot {
 		arm = new BasicSubsystem(SubsystemComponents.Arm.MOTOR::set,
 				new TwoLimits(SubsystemComponents.Arm.LIMIT1::get, SubsystemComponents.Arm.LIMIT2::get));
 
+		latch = new BasicSubsystem(SubsystemComponents.Latch.MOTOR::set, new MaxLimit(SubsystemComponents.Latch.LIMIT::get));
+				
 		oi = new OI();
 	}
 
