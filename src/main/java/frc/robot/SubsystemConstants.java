@@ -1,6 +1,8 @@
 package frc.robot;
 
 import com.spikes2212.dashboard.ConstantHandler;
+import com.spikes2212.utils.PIDSettings;
+
 import java.util.function.Supplier;
 
 import frc.robot.SubsystemComponents;
@@ -22,6 +24,38 @@ public class SubsystemConstants {
 				0.2);
 		public static final Supplier<Double> DOWN_SPEED = ConstantHandler.addConstantDouble("Lift First Down Speed",
 				-0.2);
+		public static final Supplier<Double> HATCH_FOR_SHIP_AND_LEVEL_ONE_HEIGHT
+		 = ConstantHandler.addConstantDouble("hatch(sh) + hatch 1", 0);
+		public static final Supplier<Double> HATCH_FOR_LEVEL_TWO_HEIGHT
+		 = ConstantHandler.addConstantDouble("hatch 2", 0.71);
+		public static final Supplier<Double> HATCH_FOR_LEVEL_THREE_HEIGHT
+		 = ConstantHandler.addConstantDouble("hatch 3", 142);
+		public static final Supplier<Double> CARGO_FOR_SHIP_GRIPPER_UP_HEIGHT
+		 = ConstantHandler.addConstantDouble("cargo(sh) side B", 0.414);
+		public static final Supplier<Double> CARGO_FOR_SHIP_LATCH_UP_HEIGHT
+		 = ConstantHandler.addConstantDouble("cargo(sh) side A", 1.0592);
+		public static final Supplier<Double> CARGO_FOR_LEVEL_ONE_LATCH_UP_HEIGHT
+		 = ConstantHandler.addConstantDouble("cargo 1 side A", 0.54);
+		public static final Supplier<Double> CARGO_FOR_LEVEL_TWO_GRIPPER_UP_HEIGHT
+		 = ConstantHandler.addConstantDouble("cargo 2 side B", 0.6048);
+		public static final Supplier<Double> CARGO_FOR_LEVEL_TWO_LATCH_UP_HEIGHT
+		 = ConstantHandler.addConstantDouble("cargo 2 side A", 125);
+		public static final Supplier<Double> CARGO_FOR_LEVEL_THREE_GRIPPER_UP_HEIGHT
+		 = ConstantHandler.addConstantDouble("cargo 3 side B", 160.48);
+		public static final Supplier<Double> CARGO_FOR_LEVEL_THREE_LATCH_UP_HEIGHT
+		 = ConstantHandler.addConstantDouble("cargo 3 side A", 196);
+		public static final Supplier<Double> KP
+		 = ConstantHandler.addConstantDouble("lift-kp", 0.7);
+		public static final Supplier<Double> KI
+		 = ConstantHandler.addConstantDouble("lift-ki", 0.01);
+		public static final Supplier<Double> KD
+		 = ConstantHandler.addConstantDouble("lift-kd", 0.1);
+		public static final Supplier<Double> TOLERANCE
+		 = ConstantHandler.addConstantDouble("lift-tolerance", 0);
+		public static final Supplier<Double> WAIT_TIME
+		 = ConstantHandler.addConstantDouble("lift-wait time", 100);
+		public static final PIDSettings LIFT_SETTINGS
+		 = new PIDSettings(KP.get(), KI.get(), KD.get(), TOLERANCE.get(), WAIT_TIME.get());
 	}
 
 	public static class Arm {

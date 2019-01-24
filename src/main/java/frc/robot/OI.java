@@ -7,12 +7,14 @@
 
 package frc.robot;
 
+import com.spikes2212.utils.XboXUID;
+
 import edu.wpi.first.wpilibj.Joystick;
 
 public class OI /* GEVALD */ {
-
+	private XboXUID xbox = new XboXUID(2);
 	public OI() {
-
+		
 	}
 
 	private Joystick leftJoystick = new Joystick(1);
@@ -37,5 +39,5 @@ public class OI /* GEVALD */ {
 	public double getRightJoystickY() {
 		return -adjustInput(rightJoystick.getY());
 	}
-
+	
 }
