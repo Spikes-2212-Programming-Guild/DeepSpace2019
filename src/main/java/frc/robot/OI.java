@@ -7,19 +7,32 @@
 
 package frc.robot;
 
+import com.spikes2212.genericsubsystems.basicSubsystem.commands.MoveBasicSubsystem;
 import com.spikes2212.utils.XboXUID;
 
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.Button;
+import edu.wpi.first.wpilibj.buttons.Trigger;
 
 public class OI /* GEVALD */ {
 	private XboXUID xbox = new XboXUID(2);
-	public OI() {
-		
-	}
-
 	private Joystick leftJoystick = new Joystick(1);
 	private Joystick rightJoystick = new Joystick(0);
+	private Button moveArmForward = xbox.getBlueButton();
+	private Button moveArmBackwards = xbox.getRedButton();
+	private Button closeLatch = xbox.getGreenButton();
+	private Button throwBall = xbox.getYellowButton(); 
+	public OI() {
+		moveArmForward.whenPressed(new MoveBasicSubsystem(Robot.arm, SubsystemConstants.Arm.ARM_SPEED));
+		moveArmBackwards.whenPressed(new MoveBasicSubsystem(Robot.arm, SubsystemConstants.Arm.ARM_SPEED_BACKWARDS));
+		closeLatch.whileHeld(new MoveBasicSubsystem(Robot.latch, SubsystemConstants.Latch.LATCH_SPEED));
+		throwBall.whileHeld(new MoveBasicSubsystem(Robot.gripper, SubsystemConstants.Gripper.OUT_SPEED));
+	}
 
+
+	
+	
+	
 	public static double adjustInput(double speed) {
 		return speed * Math.abs(speed);
 	}

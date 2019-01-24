@@ -59,7 +59,8 @@ public class SubsystemConstants {
 	}
 
 	public static class Arm {
-		public static final Supplier<Double> ARM_SPEED = ConstantHandler.addConstantDouble("Arm speed", 0.5);
+		public static final Supplier<Double> ARM_SPEED = ConstantHandler.addConstantDouble("Arm speed forward", 0.5);
+		public static final Supplier<Double> ARM_SPEED_BACKWARDS = ConstantHandler.addConstantDouble("Arm speed back", -0.5);
 	}
 
 	public static class Lock {
