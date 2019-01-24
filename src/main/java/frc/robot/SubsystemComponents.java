@@ -40,7 +40,7 @@ public class SubsystemComponents {
 		public static final VictorSP MOTOR = new VictorSP(RobotMap.PWM.ARM_MOTOR);
 		public static final DigitalInput LIMIT1 = new DigitalInput(RobotMap.DIO.ARM_LIMIT1);
 		public static final DigitalInput LIMIT2 = new DigitalInput(RobotMap.DIO.ARM_LIMIT2);
-		public static final Potentiometer POTENTIO = new AnalogPotentiometer(RobotMap.ANALOG_IN.ARM_POTENTIOMETER);
+		public static final AnalogPotentiometer POTENTIO = new AnalogPotentiometer(RobotMap.ANALOG_IN.ARM_POTENTIOMETER);
 	}
 
 	public static class Lock {
