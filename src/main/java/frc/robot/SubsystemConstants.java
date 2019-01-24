@@ -1,13 +1,9 @@
 package frc.robot;
 
-import com.spikes2212.dashboard.ConstantHandler;
-import com.spikes2212.utils.PIDSettings;
-
-import edu.wpi.first.wpilibj.PIDController.Tolerance;
-
 import java.util.function.Supplier;
 
-import frc.robot.SubsystemComponents;
+import com.spikes2212.dashboard.ConstantHandler;
+import com.spikes2212.utils.PIDSettings;
 
 public class SubsystemConstants {
 
