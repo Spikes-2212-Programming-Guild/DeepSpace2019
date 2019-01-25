@@ -49,6 +49,16 @@ public class SubsystemConstants {
 		public static final Supplier<Double> WAIT_TIME = ConstantHandler.addConstantDouble("lift-wait time", 100);
 		public static final PIDSettings LIFT_SETTINGS = new PIDSettings(KP.get(), KI.get(), KD.get(), TOLERANCE.get(),
 				WAIT_TIME.get());
+		public static final Supplier<Double> SETPIONT_LIMIT = ConstantHandler.addConstantDouble("Limit for pid lift", -3);
+		public static final Supplier<Double> KPD = ConstantHandler.addConstantDouble("lift-kp", 0.7);
+		public static final Supplier<Double> KID = ConstantHandler.addConstantDouble("lift-ki", 0.01);
+		public static final Supplier<Double> KDD = ConstantHandler.addConstantDouble("lift-kd", 0.1);
+		public static final Supplier<Double> TOLERANCED = ConstantHandler.addConstantDouble("lift-tolerance", 0);
+		public static final Supplier<Double> WAIT_TIMED = ConstantHandler.addConstantDouble("lift-wait time", 100);
+		public static final PIDSettings LIFT_SETTINGSD = new PIDSettings(KPD.get(), KID.get(), KDD.get(), TOLERANCED.get(),
+				WAIT_TIMED.get());
+		
+		public static final Supplier<Double> Time = ConstantHandler.addConstantDouble("Time for lift", 3);
 	}
 
 	public static class Arm {

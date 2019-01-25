@@ -43,6 +43,8 @@ public class Robot extends TimedRobot {
 				.getVoltage() < SubsystemConstants.Gripper.LIMIT_VOLTAGE.get()));
 
 		lift = new BasicSubsystem(SubsystemComponents.Lift.GEARBOX::set, (Double speed) -> {
+			if (SubsystemComponents.Lift.LIMIT_DOWN.get())
+				SubsystemComponents.Lift.ENCODER.reset();
 			if (speed == 0) // The lift can always move with 0.
 				return true;
 			// Returns false if the lift tries to move up when its in its upper
@@ -53,6 +55,7 @@ public class Robot extends TimedRobot {
 			// lower limit.
 			if (SubsystemComponents.Lift.LIMIT_DOWN.get() && speed < SubsystemConstants.Lift.STAYING_SPEED.get())
 				return false;
+			
 			return true;
 		});
 
